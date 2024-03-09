@@ -1,0 +1,4 @@
+.list-music {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+    background-color: rgba(10, 8, 8, .922);
+    display: flex;
+    font-family: Work Sans, sans-serif;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.title {
+    margin: 0px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+    text-align: center;
+    padding: 8px;
+    color: beige;
+}
+
+.music-container {
+    display: flex;
+    flex-direction: column;
+    margin: 64px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 300px;
+    height: 500px;
+    background-color: rgb(211, 187, 221);
+    border-radius: 70px;
+}
