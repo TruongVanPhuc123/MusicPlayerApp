@@ -8,7 +8,8 @@ import SkipNextIcon from '@mui/icons-material/SkipNext';
 import useMusicPlayer from '../hook/useMusicPlayer';
 
 function MainMusic() {
-    const { trackList, currentTrackName, playTrack, isPlaying } = useMusicPlayer();
+    const { trackList, currentTrackName, playTrack, isPlaying, playNextTrack, playPreviousTrack, togglePlay } = useMusicPlayer();
+
     return (
         <>
             <Box sx={{
@@ -24,11 +25,11 @@ function MainMusic() {
                     color: "#5e376d",
                     fontWeight: "400",
                     letterSpacing: "2px"
-                }}><marquee></marquee></Box>
+                }}><marquee>{currentTrackName}</marquee></Box>
             </Box>
             <div className="list-music" sx={{}}>
                 {trackList.map((track, index) => (
-                    <div key={index} className="song-title" onClick={playTrack}>{track.name}</div>
+                    <div key={index} className="song-title" onClick={() => playTrack(index)}>{track.name}</div>
                 ))}
             </div>
             <Box sx={{
@@ -39,13 +40,13 @@ function MainMusic() {
             }}>
                 <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
                     <Box>
-                        <Button variant="secondary" size='large'>
+                        <Button variant="secondary" size='large' onClick={() => playPreviousTrack()}>
                             <SkipPreviousIcon />
                         </Button>
-                        <Button variant="secondary" size='large'>
+                        <Button variant="secondary" size='large' onClick={() => togglePlay()}>
                             <PlayCircleIcon />
                         </Button>
-                        <Button variant="secondary" size='large'>
+                        <Button variant="secondary" size='large' onClick={() => playNextTrack()}>
                             <SkipNextIcon />
                         </Button>
                     </Box>

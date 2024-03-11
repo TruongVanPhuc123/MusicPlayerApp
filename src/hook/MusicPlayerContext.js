@@ -25,9 +25,6 @@ const defaultValues = {
     isPlaying: false,
 }
 
-console.log(defaultValues.tracks[0].file)
-
-
 const MusicPlayerProvider = ({ children }) => {
     const [state, setState] = useState(defaultValues);
     return (
